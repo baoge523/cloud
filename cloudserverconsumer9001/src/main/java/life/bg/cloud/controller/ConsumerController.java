@@ -22,24 +22,28 @@ public class ConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String URL = "http://localhost:8001/dept";
+//    private static final String URL = "http://localhost:8001";
+
+    // CLOUD-SERVER-PROVIDER 提供的微服务名称 相当于 ip+port
+    // 注意: 服务名称 == ip + port
+    private static final String URL = "http://CLOUD-SERVER-PROVIDER";
 
     @PostMapping("/add")
     public Boolean add(Dept dept){
-        return restTemplate.postForObject(URL+"/add",dept,Boolean.class);
+        return restTemplate.postForObject(URL+"/dept/add",dept,Boolean.class);
     }
 
     @GetMapping("/get/{id}")
     public Dept get(@PathVariable int id){
-        return restTemplate.getForObject(URL+"/get/"+id,Dept.class);
+        return restTemplate.getForObject(URL+"/dept/get/"+id,Dept.class);
     }
     @GetMapping("/list")
     public List<Dept> list(){
-        return restTemplate.getForObject(URL+"/list",List.class);
+        return restTemplate.getForObject(URL+"/dept/list",List.class);
     }
     @GetMapping("/discovery")
     public Object discovery(){
-        return restTemplate.getForObject(URL+"/discovery",Object.class);
+        return restTemplate.getForObject(URL+"/dept/discovery",Object.class);
     }
 
 }

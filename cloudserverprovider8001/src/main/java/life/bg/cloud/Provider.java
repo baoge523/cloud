@@ -14,9 +14,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  *         1、添加pom依赖和修改application配置文件
  *         2、开启Eureka的客户端 @EnableEurekaClient
  *         3、业务操作
- *
- *
- *
  */
 @EnableDiscoveryClient    // 开启发现客户端
 @EnableEurekaClient       // 开启eureka客户端

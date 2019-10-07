@@ -13,6 +13,7 @@
         <module>cloudserverprovider8001</module>
         <module>cloudservereureka7001</module>
         <module>cloudserverconsumer9001</module>
+        <module>cloudservereureka7002</module>
     </modules>
 
     <!--

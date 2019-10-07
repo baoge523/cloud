@@ -38,6 +38,32 @@
             <artifactId>spring-boot-starter-jetty</artifactId>
             <version>1.5.9.RELEASE</version>
         </dependency>
+
+        <!--  添加 Ribbon 相关的依赖
+         Ribbon 需要 eureka ，eureka 需要 config
+        -->
+        <!-- spring-cloud-starter-eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.3.5.RELEASE</version>
+        </dependency>
+
+        <!-- spring-cloud-starter-config -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+            <version>1.3.3.RELEASE</version>
+        </dependency>
+
+        <!-- spring-cloud-starter-ribbon -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+            <version>1.3.5.RELEASE</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>

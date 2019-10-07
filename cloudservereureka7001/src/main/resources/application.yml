@@ -1,12 +1,15 @@
 server:
   port: 7001
 
+# 配置eureka的域名
 eureka:
-  instance:
-    hostname: localhost   # eureka.instance.hostname: 指定主机名
+  instance:               # eureka 做了域名映射
+    hostname: eureka7001.com   # eureka.instance.hostname: 指定主机名
 
+# 配置eureka的服务
   client:
     registerWithEureka: false  # false 表示不向注册中心注册自己
     fetchRegistry: false       # false 表示当前端就是服务中心，我的职责就是维护服务实例，并不需要去检索服务
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # 设置与 eureka server交互地址的查询服务和注册服务
+    # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # 设置与 eureka server交互地址的查询服务和注册服务
+      defaultZone: http://eureka7002.com:7002/eureka/
