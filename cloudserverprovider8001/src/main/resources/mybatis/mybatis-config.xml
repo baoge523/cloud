@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--
+ 在mybatis 和 spring 整合过后，该配置文件里面的东西都可以在spring中配置。
+
+ 但是为使配置看起更完整
+
+-->
+<configuration>
+    <settings>
+        <!-- 开启二级缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+        <!-- 开启驼峰命令法-->
+        <setting name="mapUnderscoreToCamelCase" value="true"></setting>
+    </settings>
+
+</configuration>

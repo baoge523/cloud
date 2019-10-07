@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>life.bg</groupId>
+    <artifactId>cloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>cloudserverapi</module>
+        <module>cloudserverprovider8001</module>
+        <module>cloudservereureka7001</module>
+        <module>cloudserverconsumer9001</module>
+    </modules>
+
+    <!--
+       springCloud  版本 Dalston.RELEASE
+       SpringBoot   版本 1.5.9.RELEASE
+    -->
+    <properties>
+        <logback.version>1.1.11</logback.version>
+        <junit.version>4.12</junit.version>
+        <cloud.version>Dalston.RELEASE</cloud.version>
+        <boot.version>1.5.9.RELEASE</boot.version>
+    </properties>
+
+    <dependencies>
+        <!-- spring-cloud-dependencies -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>${cloud.version}</version>
+            <type>pom</type>
+        </dependency>
+        <!-- spring-boot-dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${boot.version}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        <!--引入单元测试-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <!--引入logback-core-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <!--引入logback-classic-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <!-- jackson-databind  provider 需要  -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+    </dependencies>
+
+    <!--构建-->
+    <build>
+        <!--指定父工程名称-->
+        <finalName>cloud</finalName>
+        <!--资源-->
+        <resources>
+            <!--表示允许访问 src/main/resources 下的资源-->
+            <resource>
+                <directory>src/main/resources/</directory>
+                <!--表示允许-->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <!--插件-->
+        <plugins>
+            <!-- 具体的插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <!--表示在 src/main/resources 下的资源可以使用${}来引用
+
+                          例如: artifactId = ${project.artifactId} project表示当前项目，可以通过project获取更多的信息
+
+                        -->
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

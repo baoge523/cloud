@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloudserverapi" />
+        <module name="cloudserverconsumer9001" />
+        <module name="cloudservereureka7001" />
+        <module name="cloudserverprovider8001" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud" target="1.5" />
+      <module name="cloudserverapi" target="1.5" />
+      <module name="cloudserverconsumer9001" target="1.5" />
+      <module name="cloudservereureka7001" target="1.5" />
+      <module name="cloudserverprovider8001" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
