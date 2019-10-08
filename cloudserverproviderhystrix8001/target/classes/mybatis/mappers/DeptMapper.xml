@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="life.bg.cloud.mapper.DeptMapper">
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO dept (name,db_sources) VALUES (#{name},database())
+    </insert>
+
+    <select id="queryForOne" resultType="life.bg.cloud.entity.Dept">
+        SELECT id,name,db_sources FROM dept WHERE id = #{id}
+    </select>
+
+    <select id="queryForMany" resultType="life.bg.cloud.entity.Dept">
+        SELECT id,name,db_sources FROM dept
+    </select>
+
+
+</mapper>

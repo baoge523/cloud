@@ -1,0 +1,45 @@
+# 指定访问端口号
+server:
+  port: 8001
+
+#  指定 mybatis 的配置文件
+mybatis:
+#  注意: mybatis.config-location 和 mybatis.configuration 会冲突报错
+  config-location: classpath:./mybatis/mybatis-config.xml
+  mapper-locations: classpath:./mybatis/mappers/*.xml
+
+# 数据库连接方面
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.102.195.189:3306/db_cloud?useSSL=false
+    username: root
+    password: 123456
+
+# 当前项目的名称，注入到eureka后，显示的就是这个名称(很重要)
+  application:
+    name: cloud-server-provider
+
+
+# 表示当前项目需要注册的eureka的地址，也是eureka服务向外暴露的注册地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+#   注入eureka后的实例的名称  默认是:DESKTOP-MK5PLUR:cloud-server-provider:8001(不好看)
+    instance-id: cloud-server-provider-8001-hystrix
+#   点击实例时，超链接显示当前实例的ip地址
+    prefer-ip-address: true
+
+#  eureka 点击实例的 info信息显示如下的信息
+#  其中的 .(点) 表示json数据的分割
+#  info 下面的信息的key都是自定义的
+info:
+  app.name: cloud-server-provider
+  company.name: c-server
+  build.artifactId: cloud-server-provider-hystrix-8001  # ${}之间的数据会去pom文件中获取
+  build.version: 1.0-SNAPSHOT     # ${} 之间的数据会去pom文件中获取
+
+

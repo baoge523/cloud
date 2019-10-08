@@ -14,6 +14,13 @@
         <module>cloudservereureka7001</module>
         <module>cloudserverconsumer9001</module>
         <module>cloudservereureka7002</module>
+        <module>cloudservereureka7003</module>
+        <module>cloudserverprovider8002</module>
+        <module>cloudserverprovider8003</module>
+        <module>cloudserverconsumerfeign80</module>
+        <module>cloudserverproviderhystrix8001</module>
+        <module>cloudserverconsumerhystrix9002</module>
+        <module>cloudserverzuulgateway9527</module>
     </modules>
 
     <!--
@@ -69,6 +76,21 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.5</version>
         </dependency>
+
+        <!-- mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.45</version>
+        </dependency>
+
+        <!-- druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.6</version>
+        </dependency>
+
     </dependencies>
 
     <!--构建-->

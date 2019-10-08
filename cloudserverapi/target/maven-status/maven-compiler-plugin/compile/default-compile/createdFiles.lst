@@ -1,1 +1,4 @@
+life\bg\cloud\fallback\DeptClientServiceFallbackFactory.class
+life\bg\cloud\service\DeptClientService.class
 life\bg\cloud\entity\Dept.class
+life\bg\cloud\fallback\DeptClientServiceFallbackFactory$1.class

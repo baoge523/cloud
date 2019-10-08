@@ -8,18 +8,32 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cloudserverapi" />
         <module name="cloudserverconsumer9001" />
+        <module name="cloudserverconsumerfeign80" />
+        <module name="cloudserverconsumerhystrix9002" />
         <module name="cloudservereureka7001" />
         <module name="cloudservereureka7002" />
+        <module name="cloudservereureka7003" />
         <module name="cloudserverprovider8001" />
+        <module name="cloudserverprovider8002" />
+        <module name="cloudserverprovider8003" />
+        <module name="cloudserverproviderhystrix8001" />
+        <module name="cloudserverzuulgateway9527" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cloud" target="1.5" />
-      <module name="cloudserverapi" target="1.5" />
-      <module name="cloudserverconsumer9001" target="1.5" />
-      <module name="cloudservereureka7001" target="1.5" />
-      <module name="cloudservereureka7002" target="1.5" />
-      <module name="cloudserverprovider8001" target="1.5" />
+      <module name="cloud" target="1.8" />
+      <module name="cloudserverapi" target="1.8" />
+      <module name="cloudserverconsumer9001" target="1.8" />
+      <module name="cloudserverconsumerfeign80" target="1.8" />
+      <module name="cloudserverconsumerhystrix9002" target="1.8" />
+      <module name="cloudservereureka7001" target="1.8" />
+      <module name="cloudservereureka7002" target="1.8" />
+      <module name="cloudservereureka7003" target="1.8" />
+      <module name="cloudserverprovider8001" target="1.8" />
+      <module name="cloudserverprovider8002" target="1.8" />
+      <module name="cloudserverprovider8003" target="1.8" />
+      <module name="cloudserverproviderhystrix8001" target="1.8" />
+      <module name="cloudserverzuulgateway9527" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

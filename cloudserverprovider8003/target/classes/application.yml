@@ -1,0 +1,30 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: cloud-server-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.102.195.189:3306/db_cloud3?useSSL=false
+    username: root
+    password: 123456
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mappers/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    instance-id: cloud-server-provider-8003
+    prefer-ip-address: true
+
+
+
+# 点击 该项目后显示的信息
+info:
+  app.name: cloud-server-provider-8003
+  company.name: c-server
+  build.artifactId: cloud-server-provider-8003
+  build.version: 1.0-SNAPSHOT
